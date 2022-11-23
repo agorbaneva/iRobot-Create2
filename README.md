@@ -1,6 +1,6 @@
-# iRobot-Create2-Programmable-Robot-GUI-Using-YOLOv5
+# iRobot Create2 GUI with Live Video Object Detection using CNNs, YOLOv5
 
-A GUI for controlling the [iRobot Create 2 Programmable Robot](https://www.irobot.com/en_US/irobot-create-2-programmable-robot/RC65099.html) coded in Python with PyQt5. Once the robot establishes a connection with the GUI via a mini-DIN to USB cable, the robot moves with WASD controls. The robot can follow a drawn path on the GUI and return to its dock to recharge with a button press.
+A GUI for controlling the [iRobot Create 2 Robot](https://www.irobot.com/en_US/irobot-create-2-programmable-robot/RC65099.html) coded in Python with PyQt5. Once the robot establishes a connection with the GUI via a mini-DIN to USB cable, the robot moves with WASD controls. The robot can follow a drawn path on the GUI and return to its dock to recharge with a button press.
 
 The GUI shows the robot's battery level and wirelessly displays live video from a Raspberry Pi's Camera Module V2.
 
