@@ -34,13 +34,9 @@ class MouseDrawer(QWidget):
             if event.buttons() and Qt.LeftButton:
                 self.points = [[self.geometry().width()//2, self.geometry().height()//2]]
 
-        #print(self.points)
-
-
     def mouseReleaseEvent(self, event):
         self.points += [[event.pos().x(), event.pos().y()]]
         self.update()
-        #self.repaint()
 
     def followPath(self):
         if len(self.points) < 2:
@@ -74,7 +70,6 @@ class MouseDrawer(QWidget):
             direction = self.turnWhichWay([0, 0], vector2, vector1)
             movements[x] = [distance, turn_angle, direction]
 
-        #print("movements", movements)
         return movements
 
     def calculateAngle(self, vector1, vector2):
@@ -94,7 +89,6 @@ class MouseDrawer(QWidget):
         # determine which side of the segment the point is on
         # so robot can turn left or right
         dot = (point[0] - segment_p1[0])*(segment_p2[1] - segment_p1[1]) - (point[1] - segment_p1[1])*(segment_p2[0] - segment_p1[0])
-        #print(dot)
         if dot < 0:
             return "L"
         if dot > 0:

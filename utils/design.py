@@ -87,7 +87,6 @@ class Ui_MainWindow(object):
         self.followPathButton.setStyleSheet("QPushButton {font: 14pt \"Century Gothic Bold\"; color: rgb(98, 111, 132)}"
                                          "QPushButton:pressed { background-color:" + BACKGROUND_COLOR_WHEN_PRESSED + "; }")
         self.followPathButton.setGeometry(MARGIN + self.pathWidget.frameGeometry().width()*3//4 - BUTTON_WIDTH//2, self.pathWidget.geometry().bottom() + 20, BUTTON_WIDTH, BUTTON_LENGTH)
-        # self.followPathButton.clicked.connect(self.pathWidget.followPath())
 
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setObjectName("title")
@@ -108,7 +107,7 @@ class Ui_MainWindow(object):
         self.batteryPercent = TimerLCDNumber(self.batterySplitter)
         self.batteryPercent.setObjectName("batteryPercent")
         self.batteryPercent.setStyleSheet("font: 20 pt \"Century Gothic Bold\";")
-        # self.batteryPercent.setValue(self.getBattery())
+        self.batteryPercent.setValue(self.getBattery())
 
 
         # changed from widget to qlabel
@@ -147,8 +146,6 @@ class Ui_MainWindow(object):
         graph  = pg.PlotDataItem(points)
 
         self.graphWidget.addItem(graph)
-        #self.graphWidget.addScatter(0, 0, 0)
-        #self.graphWidget.setDefaultPadding(padding=0)
 
         self.graphWidget.setGeometry(QtCore.QRect(WIDTH - MARGIN - 380, 550, VIDEO_WIDTH, 275))
         self.graphWidget.setStyleSheet("background-color: rgb(0, 0, 0);")

@@ -24,7 +24,7 @@ class Worker1(QThread):
         # self.count = 0
 
     def run(self):
-        # change this to True if you want to connect the Pi Camera Module V2 to the GUI
+        # change this to True if you want to connect the Pi Camera Module V2 to the GUI and uncomment below
         self.ThreadActive = False # True
 
         # conn, addr = self.server_socket.accept()
@@ -58,7 +58,6 @@ class Worker1(QThread):
 
                 results.save(save_dir="YOLOv5")
 
-                # ResultImage.show()
                 ConvertToQtFormat = QImage(Image.data, Image.shape[1], Image.shape[0],
                                            QImage.Format_RGB888)
                 Pic = ConvertToQtFormat.scaled(411, 300, Qt.KeepAspectRatio)
